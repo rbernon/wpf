@@ -1,0 +1,16 @@
+ExceptionStringTable.txt
+Strings.resources
+win32res.rc
+xlf/Strings.cs.xlf
+xlf/Strings.de.xlf
+xlf/Strings.es.xlf
+xlf/Strings.fr.xlf
+xlf/Strings.it.xlf
+xlf/Strings.ja.xlf
+xlf/Strings.ko.xlf
+xlf/Strings.pl.xlf
+xlf/Strings.pt-BR.xlf
+xlf/Strings.ru.xlf
+xlf/Strings.tr.xlf
+xlf/Strings.zh-Hans.xlf
+xlf/Strings.zh-Hant.xlf

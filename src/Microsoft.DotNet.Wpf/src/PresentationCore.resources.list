@@ -1,0 +1,14 @@
+PresentationCore.Strings.resources
+PresentationCore/Resources/xlf/Strings.cs.xlf
+PresentationCore/Resources/xlf/Strings.de.xlf
+PresentationCore/Resources/xlf/Strings.es.xlf
+PresentationCore/Resources/xlf/Strings.fr.xlf
+PresentationCore/Resources/xlf/Strings.it.xlf
+PresentationCore/Resources/xlf/Strings.ja.xlf
+PresentationCore/Resources/xlf/Strings.ko.xlf
+PresentationCore/Resources/xlf/Strings.pl.xlf
+PresentationCore/Resources/xlf/Strings.pt-BR.xlf
+PresentationCore/Resources/xlf/Strings.ru.xlf
+PresentationCore/Resources/xlf/Strings.tr.xlf
+PresentationCore/Resources/xlf/Strings.zh-Hans.xlf
+PresentationCore/Resources/xlf/Strings.zh-Hant.xlf
