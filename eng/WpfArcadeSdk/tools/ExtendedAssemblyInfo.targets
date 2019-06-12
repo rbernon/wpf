@@ -293,11 +293,11 @@
     <ItemGroup>
       <Compile Remove="$(GeneratedExtendedAssemblyInfoFile)" />
     </ItemGroup>
-
+<!--
     <ParseExtendedAssemblyInfo ExtendedAssemblyInfo="@(ExtendedAssemblyInfo)">
       <Output ItemName="ExtendedAttributeInfo" TaskParameter="Result" />
     </ParseExtendedAssemblyInfo>
-
+ -->
     <ItemGroup>
       <ExtendedAssemblyInfoFileContent Remove="@(ExtendedAssemblyInfoFileContent )" />
       <ExtendedAssemblyInfoFileContent Include="Comments">

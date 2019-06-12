@@ -31,8 +31,8 @@
     <TargetFramework>netcoreapp3.0</TargetFramework>
     <TargetFrameworkIdentifier>.NETCoreApp</TargetFrameworkIdentifier>
   </PropertyGroup>
-  
-  <Import Project="$(WpfCppProps)" />
+
+  <!-- <Import Project="$(WpfCppProps)" /> -->
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
 
   <PropertyGroup Label="Globals">
