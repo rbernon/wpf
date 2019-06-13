@@ -18,6 +18,35 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="..\TextInterface\MS\Internal\Text\TextInterface\DWriteFontFeature.cs" />
+    <Compile Include="..\TextInterface\MS\Internal\Text\TextInterface\DWriteFontFeatureTag.cs" />
+    <Compile Include="..\TextInterface\MS\Internal\Text\TextInterface\DWriteTypeConverter.cs" />
+    <Compile Include="..\TextInterface\MS\Internal\Text\TextInterface\Factory.cs" />
+    <Compile Include="..\TextInterface\MS\Internal\Text\TextInterface\Font.cs" />
+    <Compile Include="..\TextInterface\MS\Internal\Text\TextInterface\FontCollection.cs" />
+    <Compile Include="..\TextInterface\MS\Internal\Text\TextInterface\FontFace.cs" />
+    <Compile Include="..\TextInterface\MS\Internal\Text\TextInterface\FontFamily.cs" />
+    <Compile Include="..\TextInterface\MS\Internal\Text\TextInterface\FontFile.cs" />
+    <Compile Include="..\TextInterface\MS\Internal\Text\TextInterface\FontMetrics.cs" />
+    <Compile Include="..\TextInterface\MS\Internal\Text\TextInterface\GlyphMetrics.cs" />
+    <Compile Include="..\TextInterface\MS\Internal\Text\TextInterface\GlyphOffset.cs" />
+    <Compile Include="..\TextInterface\MS\Internal\Text\TextInterface\IClassification.cs" />
+    <Compile Include="..\TextInterface\MS\Internal\Text\TextInterface\IFontSource.cs" />
+    <Compile Include="..\TextInterface\MS\Internal\Text\TextInterface\IFontSourceCollection.cs" />
+    <Compile Include="..\TextInterface\MS\Internal\Text\TextInterface\IFontSourceCollectionFactory.cs" />
+    <Compile Include="..\TextInterface\MS\Internal\Text\TextInterface\IFontSourceFactory.cs" />
+    <Compile Include="..\TextInterface\MS\Internal\Text\TextInterface\InformationalStringID.cs" />
+    <Compile Include="..\TextInterface\MS\Internal\Text\TextInterface\ItemProps.cs" />
+    <Compile Include="..\TextInterface\MS\Internal\Text\TextInterface\LocalizedStrings.cs" />
+    <Compile Include="..\TextInterface\MS\Internal\Text\TextInterface\LocalizedErrorMsgs.cs" />
+    <Compile Include="..\TextInterface\MS\Internal\Text\TextInterface\OpenTypeTableTag.cs" />
+    <Compile Include="..\TextInterface\MS\Internal\Text\TextInterface\TextAnalyzer.cs" />
+    <Compile Include="..\TextInterface\MS\Internal\NativeWPFDLLLoader.cs" />
+    <Compile Include="..\TextInterface\MS\Internal\TrueTypeSubsetter.cs" />
+    <Compile Include="..\TextInterface\MS\Internal\Span.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Include="$(WpfCommonDir)\src\System\LocalAppContext.cs" />
     <Compile Include="$(WpfCommonDir)\src\System\AppContextDefaultValues.cs" />
     <Compile Include="System\AppContextDefaultValues.cs" />
