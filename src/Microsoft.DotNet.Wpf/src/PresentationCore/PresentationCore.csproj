@@ -9,7 +9,7 @@
     <GenerateResourcesSRNamespace>MS.Internal.PresentationCore</GenerateResourcesSRNamespace>
     <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
     <Platforms>AnyCPU;x64</Platforms>
-    <InjectModuleInitializer>true</InjectModuleInitializer>
+    <!-- <InjectModuleInitializer>true</InjectModuleInitializer> -->
   </PropertyGroup>
   
   <PropertyGroup>
