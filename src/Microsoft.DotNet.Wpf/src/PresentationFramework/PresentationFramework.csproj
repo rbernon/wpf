@@ -1480,7 +1480,7 @@
   <Target Name="GenerateTemplates" DependsOnTargets="GenerateTemplatesCore" Returns="@(Compile)">
     <Error Condition="!Exists('$(IntermediateOutputPath)\%(CollectionTemplate.Identity)')" Text="$(IntermediateOutputPath)\%(CollectionTemplate.Identity) does not exist" />
     <ItemGroup>
-      <Compile Include="$(IntermediateOutputPath)%(CollectionTemplate.Identity)" />
+      <Compile Include="$(IntermediateOutputPath)\%(CollectionTemplate.Identity)" />
     </ItemGroup>
   </Target>
   
@@ -1491,7 +1491,7 @@
     <Error Text="The body file %(CollectionTemplate.Pattern).tb is missing.  Cannot generate template in %(CollectionTemplate.Identity)" Condition="!Exists('%(CollectionTemplate.Pattern).tb')" />
     <Error Text="The instances file %(Template).ti is missing.  Cannot generate template in %(CollectionTemplate.Identity)" Condition="!Exists('%(CollectionTemplate.Template).ti')" />
     <Message Text="Generating template in %(CollectionTemplate.Identity)" />
-    <Exec Command="$(PerlCommand) template.pl %(CollectionTemplate.Pattern) %(CollectionTemplate.Template) &gt; $(IntermediateOutputPath)\%(CollectionTemplate.Identity)" Outputs="$(IntermediateOutputPath)\%(CollectionTemplate.Identity)" StandardOutputImportance="normal" />
+    <Exec Command="$(PerlCommand) template.pl %(CollectionTemplate.Pattern) %(CollectionTemplate.Template) &gt; $(IntermediateOutputPath)/%(CollectionTemplate.Identity)" Outputs="$(IntermediateOutputPath)\%(CollectionTemplate.Identity)" StandardOutputImportance="normal" />
   </Target>
   <Import Project="$(WpfCodeGenDir)AvTrace\GenAvMessages.targets" />
   <!-- DevDiv Bug 888747: Re-enable AvTrace codegen -->
