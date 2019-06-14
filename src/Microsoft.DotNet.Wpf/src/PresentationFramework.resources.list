@@ -1,0 +1,16 @@
+PresentationFramework.Strings.resources
+PresentationFramework/Resources/win32res/split.cur
+PresentationFramework/Resources/win32res/splitopen.cur
+PresentationFramework/Resources/xlf/Strings.cs.xlf
+PresentationFramework/Resources/xlf/Strings.de.xlf
+PresentationFramework/Resources/xlf/Strings.es.xlf
+PresentationFramework/Resources/xlf/Strings.fr.xlf
+PresentationFramework/Resources/xlf/Strings.it.xlf
+PresentationFramework/Resources/xlf/Strings.ja.xlf
+PresentationFramework/Resources/xlf/Strings.ko.xlf
+PresentationFramework/Resources/xlf/Strings.pl.xlf
+PresentationFramework/Resources/xlf/Strings.pt-BR.xlf
+PresentationFramework/Resources/xlf/Strings.ru.xlf
+PresentationFramework/Resources/xlf/Strings.tr.xlf
+PresentationFramework/Resources/xlf/Strings.zh-Hans.xlf
+PresentationFramework/Resources/xlf/Strings.zh-Hant.xlf

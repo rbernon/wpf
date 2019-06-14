@@ -1,0 +1,8 @@
+Shared/RefAssemblyAttrs.cs
+../cycle-breakers/ReachFramework/System.Printing.PrintTicket.cs
+../cycle-breakers/ReachFramework/System.Printing.PrintTicketScope.cs
+../cycle-breakers/ReachFramework/System.Printing.PrintCapabilities.cs
+../cycle-breakers/ReachFramework/System.Printing.ValidationResult.cs
+../cycle-breakers/ReachFramework/System.Windows.Xps.Packaging.PackagingProgressEventArgs.cs
+../cycle-breakers/ReachFramework/System.Windows.Xps.Serialization.RCW.IXpsOMPackageWriter.cs
+../cycle-breakers/ReachFramework/System.Windows.Xps.Packaging.XpsDocument.cs

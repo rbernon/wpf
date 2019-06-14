@@ -1,0 +1,8 @@
+../cycle-breakers/PresentationFramework/System.Windows.Documents.FixedDocument.cs
+../cycle-breakers/PresentationFramework/System.Windows.Documents.FixedDocumentSequence.cs
+../cycle-breakers/PresentationFramework/System.Windows.Documents.FixedPage.cs
+../cycle-breakers/PresentationFramework/System.Windows.Controls.PageRange.cs
+../cycle-breakers/PresentationFramework/System.Windows.Controls.PageRangeSelection.cs
+../cycle-breakers/PresentationFramework/System.Windows.Documents.Serialization.Delegates.cs
+../cycle-breakers/PresentationFramework/System.Windows.Documents.Serialization.SerializerWriter.cs
+../cycle-breakers/PresentationFramework/System.Windows.Documents.Serialization.SerializerWriterCollator.cs
