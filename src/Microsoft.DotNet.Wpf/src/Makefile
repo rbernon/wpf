@@ -1,6 +1,9 @@
-RESX2SR = mono ~/Code/wpf/resx2sr.exe
+WINE_MONO_SRCDIR ?= ../../../../wine-mono
+MONO_PREFIX ?= /usr
+
+RESX2SR = mono $(WINE_MONO_SRCDIR)/mono/mcs/class/lib/build-linux/resx2sr.exe
 CSC = csc -target:library
-CSFLAGS = -unsafe -delaysign+ -keyfile:winfx3.pub -langversion:7.3 -nowarn:CS0436 -nowarn:CS0618 -nostdlib -noconfig -lib:/usr/lib/mono/4.5-api
+CSFLAGS = -unsafe -delaysign+ -keyfile:winfx3.pub -langversion:7.3 -nowarn:CS0436 -nowarn:CS0618 -nostdlib -noconfig -lib:$(MONO_PREFIX)/lib/mono/4.5-api
 CSLIBS = -r:mscorlib.dll -r:System.dll -r:System.Configuration.dll -r:System.Core.dll -r:System.Drawing.dll -r:System.Xml.dll -r:System.Windows.dll
 
 all:
