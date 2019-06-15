@@ -44,7 +44,7 @@ namespace System
         {
             string resourceString = null;
             try { resourceString = ResourceManager.GetString(resourceKey); }
-            catch (MissingManifestResourceException) { }
+            catch (MissingManifestResourceException) { resourceString = resourceKey; }
 
             if (defaultString != null && resourceKey.Equals(resourceString, StringComparison.Ordinal))
             {
