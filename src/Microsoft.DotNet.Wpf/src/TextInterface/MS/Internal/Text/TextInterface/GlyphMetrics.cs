@@ -17,11 +17,11 @@ namespace MS.Internal.Text.TextInterface {
   /// performance degradations.
   ///
   /// </summary>
-  public struct GlyphMetrics {
+  internal struct GlyphMetrics {
 #if USE_CAIRO
     private Cairo.TextExtents cairo;
 
-    public GlyphMetrics(Cairo.TextExtents c) { cairo = c; }
+    internal GlyphMetrics(Cairo.TextExtents c) { cairo = c; }
 
     /// <summary>
     /// Specifies the X offset from the glyph origin to the left edge of the
@@ -29,7 +29,7 @@ namespace MS.Internal.Text.TextInterface {
     /// A negative value means the black box extends to the left of the origin
     /// (often true for lowercase italic 'f').
     /// </summary>
-    public int LeftSideBearing {
+    internal int LeftSideBearing {
       get { return Convert.ToInt32(cairo.XBearing); }
     }
 
@@ -37,7 +37,7 @@ namespace MS.Internal.Text.TextInterface {
     /// Specifies the X offset from the origin of the current glyph to the
     /// origin of the next glyph when writing horizontally.
     /// </summary>
-    public uint AdvanceWidth {
+    internal uint AdvanceWidth {
       get { return Convert.ToUInt32(cairo.XAdvance); }
     }
 
@@ -46,7 +46,7 @@ namespace MS.Internal.Text.TextInterface {
     /// origin of the next glyph when writing horizontally. The value is
     /// negative when the right edge of the black box overhangs the layout box.
     /// </summary>
-    public int RightSideBearing {
+    internal int RightSideBearing {
       get {
         return Convert.ToInt32(cairo.XAdvance - cairo.XBearing - cairo.Width);
       }
@@ -57,7 +57,7 @@ namespace MS.Internal.Text.TextInterface {
     /// black box. Thus, a positive value adds whitespace whereas a negative
     /// value means the glyph overhangs the top of the layout box.
     /// </summary>
-    public int TopSideBearing {
+    internal int TopSideBearing {
       get { return Convert.ToInt32(cairo.YBearing); }
     }
 
@@ -69,7 +69,7 @@ namespace MS.Internal.Text.TextInterface {
     /// verticalOriginY value, and its X coordinate is half the advanceWidth to
     /// the right of the horizontal origin).
     /// </summary>
-    public uint AdvanceHeight {
+    internal uint AdvanceHeight {
       get { return Convert.ToUInt32(cairo.YAdvance); }
     }
 
@@ -79,7 +79,7 @@ namespace MS.Internal.Text.TextInterface {
     /// the layout box. Negative when the bottom edge of black box overhangs the
     /// layout box.
     /// </summary>
-    public int BottomSideBearing {
+    internal int BottomSideBearing {
       get {
         return Convert.ToInt32(cairo.YAdvance - cairo.YBearing - cairo.Height);
       }
@@ -91,17 +91,17 @@ namespace MS.Internal.Text.TextInterface {
     /// is the sum of the glyph's top side bearing and the top (i.e. yMax) of
     /// the glyph's bounding box.
     /// </summary>
-    // public int VerticalOriginY {
+    // internal int VerticalOriginY {
     //     get { return 0; }
     // }
 #else
-    public int LeftSideBearing { get; }
-    public int RightSideBearing { get; }
-    public int TopSideBearing { get; }
-    public int BottomSideBearing { get; }
-    public uint AdvanceWidth { get; }
-    public uint AdvanceHeight { get; }
-    public int VerticalOriginY { get; }
+    internal int LeftSideBearing { get; }
+    internal int RightSideBearing { get; }
+    internal int TopSideBearing { get; }
+    internal int BottomSideBearing { get; }
+    internal uint AdvanceWidth { get; }
+    internal uint AdvanceHeight { get; }
+    internal int VerticalOriginY { get; }
 #endif
   }
 }

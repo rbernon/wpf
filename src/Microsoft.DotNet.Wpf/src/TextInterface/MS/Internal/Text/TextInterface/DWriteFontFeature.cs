@@ -5,8 +5,8 @@
 using System;
 
 namespace MS.Internal.Text.TextInterface {
-  public partial class DWriteFontFeature {
-    public extern DWriteFontFeature(DWriteFontFeatureTag dwriteNameTag,
-                                    uint dwriteParameter);
+  internal partial class DWriteFontFeature {
+    internal DWriteFontFeature(DWriteFontFeatureTag dwriteNameTag,
+                               uint dwriteParameter) {}
   }
 }

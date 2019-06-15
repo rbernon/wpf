@@ -5,10 +5,14 @@
 using System;
 
 namespace MS.Internal.Text.TextInterface {
-  public partial class FontCollection {
-    public uint FamilyCount { get; }
-    extern public FontFamily this[uint familyIndex] { get; }
-    extern public FontFamily this[string familyName] { get; }
-    extern public Font GetFontFromFontFace(FontFace fontFace);
+  internal class FontCollection {
+    internal uint FamilyCount { get; }
+    internal FontFamily this[uint familyIndex] {
+      get { return new FontFamily(); }
+    }
+    internal FontFamily this[string familyName] {
+      get { return new FontFamily(); }
+    }
+    internal Font GetFontFromFontFace(FontFace fontFace) { return new Font(); }
   }
 }

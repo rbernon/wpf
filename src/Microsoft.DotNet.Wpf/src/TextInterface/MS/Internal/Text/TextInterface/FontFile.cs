@@ -5,8 +5,8 @@
 using System;
 
 namespace MS.Internal.Text.TextInterface {
-  public class FontFile : IDisposable {
-    extern public string GetUriPath();
+  internal class FontFile : IDisposable {
+    internal string GetUriPath() { return ""; }
     public void Dispose() {}
   }
 }

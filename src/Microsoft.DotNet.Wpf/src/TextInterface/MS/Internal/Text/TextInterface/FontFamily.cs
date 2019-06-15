@@ -5,14 +5,17 @@
 using System.Collections.Generic;
 
 namespace MS.Internal.Text.TextInterface {
-  public partial class FontFamily : List<Font> {
-    public string OrdinalName { get; }
-    public LocalizedStrings FamilyNames { get; }
-    public FontMetrics Metrics { get; }
+  internal class FontFamily : List<Font> {
+    internal string OrdinalName { get; }
+    internal LocalizedStrings FamilyNames { get; }
+    internal FontMetrics Metrics { get; }
 
-    extern public FontMetrics DisplayMetrics(float emSize, float pixelsPerDip);
-    extern public Font GetFirstMatchingFont(FontWeight weight,
-                                            FontStretch stretch,
-                                            FontStyle style);
+    internal FontMetrics DisplayMetrics(float emSize, float pixelsPerDip) {
+      return new FontMetrics();
+    }
+    internal Font GetFirstMatchingFont(FontWeight weight, FontStretch stretch,
+                                       FontStyle style) {
+      return new Font();
+    }
   }
 }

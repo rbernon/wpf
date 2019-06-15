@@ -8,7 +8,7 @@ namespace MS.Internal.Text.TextInterface {
 #if USE_CAIRO
   using FontFaceType = Cairo.FontType;
 #else
-  public enum FontFaceType {
+  internal enum FontFaceType {
     TrueTypeCollection,
     CFF,
   }
@@ -20,16 +20,16 @@ namespace MS.Internal.Text.TextInterface {
   /// identification data. Various font data such as metrics, names and glyph
   /// outlines is obtained from FontFace.
   /// </summary>
-  public class FontFace : IDisposable {
+  internal class FontFace : IDisposable {
 #if USE_CAIRO
     private Cairo.ScaledFont cairo;
 
-    public FontFace(Cairo.ScaledFont c) { cairo = c; }
+    internal FontFace(Cairo.ScaledFont c) { cairo = c; }
 
     /// <summary>
     /// Gets the file format type of a font face.
     /// </summary>
-    public FontFaceType Type {
+    internal FontFaceType Type {
       get { return cairo.FontType; }
     }
 
@@ -38,14 +38,14 @@ namespace MS.Internal.Text.TextInterface {
     /// These metrics are applicable to all the glyphs within a fontface and are
     /// used by applications for layout calculations.
     /// </summary>
-    public FontMetrics Metrics {
+    internal FontMetrics Metrics {
       get { return new FontMetrics(cairo.FontExtents); }
     }
 
     /// <summary>
     /// Gets the number of glyphs in the font face.
     /// </summary>
-    // public ushort GlyphCount
+    // internal ushort GlyphCount
     // {
     //     get;
     // }
@@ -162,27 +162,33 @@ namespace MS.Internal.Text.TextInterface {
     // [SecuritySafeCritical]
     // ~FontFace;
 #else
-    public FontFaceType Type { get; }
-    public ushort GlyphCount { get; }
-    public IntPtr DWriteFontFaceAddRef { get; }
-    public uint Index { get; }
+    internal FontFaceType Type { get; }
+    internal ushort GlyphCount { get; }
+    internal IntPtr DWriteFontFaceAddRef { get; }
+    internal uint Index { get; }
 
-    extern public FontFile GetFileZero();
-    extern public void Release();
-    extern public bool ReadFontEmbeddingRights(out ushort fsType);
-    extern public bool TryGetFontTable(OpenTypeTableTag openTypeTableTag,
-                                       out byte[] tableData);
-    unsafe extern public void GetArrayOfGlyphIndices(uint *pCodePoints,
-                                                     uint glyphCount,
-                                                     ushort *pGlyphIndices);
-    unsafe extern public void
-    GetDesignGlyphMetrics(ushort *pGlyphIndices, uint glyphCount,
-                          GlyphMetrics *pGlyphMetrics);
-    unsafe extern public void
+    internal FontFile GetFileZero() { return new FontFile(); }
+    internal void Release() {}
+    internal bool ReadFontEmbeddingRights(out ushort fsType) {
+      fsType = 0;
+      return false;
+    }
+    internal bool TryGetFontTable(OpenTypeTableTag openTypeTableTag,
+                                  out byte[] tableData) {
+      tableData = new byte[0];
+      return false;
+    }
+    unsafe internal void GetArrayOfGlyphIndices(uint *pCodePoints,
+                                                uint glyphCount,
+                                                ushort *pGlyphIndices) {}
+    unsafe internal void GetDesignGlyphMetrics(ushort *pGlyphIndices,
+                                               uint glyphCount,
+                                               GlyphMetrics *pGlyphMetrics) {}
+    unsafe internal void
     GetDisplayGlyphMetrics(ushort *pGlyphIndices, uint glyphCount,
                            GlyphMetrics *pGlyphMetrics, float emSize,
                            bool useDisplayNatural, bool isSideways,
-                           float pixelsPerDip);
+                           float pixelsPerDip) {}
 #endif
     public void Dispose() {}
   }

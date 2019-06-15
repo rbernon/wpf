@@ -5,27 +5,30 @@
 using System;
 
 namespace MS.Internal.Text.TextInterface {
-  public enum FontStyle {}
-  public enum FontStretch {}
-  public enum FontWeight {}
-  public enum FontSimulations {}
+  internal enum FontStyle {}
+  internal enum FontStretch {}
+  internal enum FontWeight {}
+  internal enum FontSimulations {}
 
-  public class Font {
-    public FontMetrics Metrics { get; }
-    public FontStyle Style { get; }
-    public FontStretch Stretch { get; }
-    public LocalizedStrings FaceNames { get; }
-    public FontWeight Weight { get; }
-    public FontSimulations SimulationFlags { get; }
-    public IntPtr DWriteFontAddRef { get; }
+  internal class Font {
+    internal FontMetrics Metrics { get; }
+    internal FontStyle Style { get; }
+    internal FontStretch Stretch { get; }
+    internal LocalizedStrings FaceNames { get; }
+    internal FontWeight Weight { get; }
+    internal FontSimulations SimulationFlags { get; }
+    internal IntPtr DWriteFontAddRef { get; }
 
-    public bool IsSymbolFont { get; }
-    public double Version { get; }
-    extern public FontFace GetFontFace();
-    extern public bool HasCharacter(uint unicodeValue);
-    extern public static void ResetFontFaceCache();
-    extern public bool
+    internal bool IsSymbolFont { get; }
+    internal double Version { get; }
+    internal FontFace GetFontFace() { return new FontFace(); }
+    internal bool HasCharacter(uint unicodeValue) { return false; }
+    internal static void ResetFontFaceCache() {}
+    internal bool
     GetInformationalStrings(InformationalStringID informationalStringID,
-                            out LocalizedStrings informationalStrings);
+                            out LocalizedStrings informationalStrings) {
+      informationalStrings = new LocalizedStrings();
+      return false;
+    }
   }
 }

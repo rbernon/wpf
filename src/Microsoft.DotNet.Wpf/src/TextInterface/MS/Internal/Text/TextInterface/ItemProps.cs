@@ -6,13 +6,13 @@ using System;
 using System.Globalization;
 
 namespace MS.Internal.Text.TextInterface {
-  public class ItemProps {
-    public CultureInfo DigitCulture { get; }
-    public bool IsLatin { get; }
-    public bool IsIndic { get; }
-    public bool HasCombiningMark { get; }
-    public bool HasExtendedCharacter { get; }
-    public bool NeedsCaretInfo { get; }
-    public extern bool CanShapeTogether(ItemProps other);
+  internal class ItemProps {
+    internal CultureInfo DigitCulture { get; }
+    internal bool IsLatin { get; }
+    internal bool IsIndic { get; }
+    internal bool HasCombiningMark { get; }
+    internal bool HasExtendedCharacter { get; }
+    internal bool NeedsCaretInfo { get; }
+    internal bool CanShapeTogether(ItemProps other) { return false; }
   }
 }

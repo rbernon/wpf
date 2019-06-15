@@ -6,5 +6,5 @@ using System.Collections.Generic;
 using System.Globalization;
 
 namespace MS.Internal.Text.TextInterface {
-  public class LocalizedStrings : Dictionary<CultureInfo, string> {}
+  internal class LocalizedStrings : Dictionary<CultureInfo, string> {}
 }

@@ -5,20 +5,32 @@
 using System;
 
 namespace MS.Internal.Text.TextInterface {
-  public enum FactoryType { Shared }
-  public partial class Factory {
-    public extern static Factory
+  internal enum FactoryType { Shared }
+  internal class Factory {
+    internal static Factory
     Create(FactoryType factoryType,
            IFontSourceCollectionFactory fontSourceCollectionFactory,
-           IFontSourceFactory fontSourceFactory);
-    public extern FontCollection GetFontCollection(System.Uri uri);
-    public extern FontCollection GetSystemFontCollection();
-    public static bool IsLocalUri(System.Uri uri) {
+           IFontSourceFactory fontSourceFactory) {
+      return new Factory();
+    }
+
+    internal FontCollection GetFontCollection(System.Uri uri) {
+      return new FontCollection();
+    }
+
+    internal FontCollection GetSystemFontCollection() {
+      return new FontCollection();
+    }
+
+    internal static bool IsLocalUri(System.Uri uri) {
       return (uri.IsFile && uri.IsLoopback && !uri.IsUnc);
     }
-    public extern TextAnalyzer CreateTextAnalyzer();
-    public extern FontFace CreateFontFace(System.Uri filePathUri,
-                                          uint faceIndex,
-                                          FontSimulations fontSimulationFlags);
+
+    internal TextAnalyzer CreateTextAnalyzer() { return new TextAnalyzer(); }
+
+    internal FontFace CreateFontFace(System.Uri filePathUri, uint faceIndex,
+                                     FontSimulations fontSimulationFlags) {
+      return new FontFace();
+    }
   }
 }

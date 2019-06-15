@@ -5,11 +5,12 @@
 using System;
 
 namespace MS.Internal {
-  public class TrueTypeSubsetter {
-    unsafe public extern static byte[] ComputeSubset(void *fontData,
-                                                     int fileSize,
-                                                     System.Uri sourceUri,
-                                                     int directoryOffset,
-                                                     ushort[] glyphArray);
+  internal class TrueTypeSubsetter {
+    unsafe internal static byte[] ComputeSubset(void *fontData, int fileSize,
+                                                System.Uri sourceUri,
+                                                int directoryOffset,
+                                                ushort[] glyphArray) {
+      return new byte[0];
+    }
   }
 }

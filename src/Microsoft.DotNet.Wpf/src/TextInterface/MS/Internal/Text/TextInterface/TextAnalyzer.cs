@@ -18,7 +18,7 @@ namespace MS.Internal.Text.TextInterface {
   /// <SecurityNote>
   /// Critical    - receives native pointers as parameters.
   /// </SecurityNote>
-  public unsafe delegate int CreateTextAnalysisSource(
+  internal unsafe delegate int CreateTextAnalysisSource(
       char *text, uint length, char *culture, void *factory, bool isRightToLeft,
       char *numberCulture, bool ignoreUserOverride,
       uint numberSubstitutionMethod, void **ppTextAnalysisSource);
@@ -26,21 +26,22 @@ namespace MS.Internal.Text.TextInterface {
   /// <SecurityNote>
   /// Critical    - Returns a native pointer.
   /// </SecurityNote>
-  public unsafe delegate void *CreateTextAnalysisSink();
+  internal unsafe delegate void *CreateTextAnalysisSink();
 
   /// <SecurityNote>
   /// Critical    - receives as parameters and returns native pointers .
   /// </SecurityNote>
-  public unsafe delegate void *GetScriptAnalysisList(void *param);
+  internal unsafe delegate void *GetScriptAnalysisList(void *param);
 
   /// <SecurityNote>
   /// Critical    - receives as parameters and returns native pointers .
   /// </SecurityNote>
-  public unsafe delegate void *GetNumberSubstitutionList(void *param);
+  internal unsafe delegate void *GetNumberSubstitutionList(void *param);
 
-  public class TextAnalyzer {
-    public const char CharHyphen = '\x002d';
-    unsafe public extern static IList<Span>
+  internal class TextAnalyzer {
+    internal const char CharHyphen = '\x002d';
+
+    unsafe internal static IList<Span>
     Itemize(char *text, uint length, CultureInfo culture, Factory factory,
             bool isRightToLeftParagraph, CultureInfo numberCulture,
             bool ignoreUserOverride, uint numberSubstitutionMethod,
@@ -48,8 +49,11 @@ namespace MS.Internal.Text.TextInterface {
             CreateTextAnalysisSink pfnCreateTextAnalysisSink,
             GetScriptAnalysisList pfnGetScriptAnalysisList,
             GetNumberSubstitutionList pfnGetNumberSubstitutionList,
-            CreateTextAnalysisSource pfnCreateTextAnalysisSource);
-    unsafe public extern void
+            CreateTextAnalysisSource pfnCreateTextAnalysisSource) {
+      return new List<Span>{};
+    }
+
+    unsafe internal void
     GetGlyphs(char *textString, uint textLength, Font font,
               ushort blankGlyphIndex, bool isSideways, bool isRightToLeft,
               CultureInfo cultureInfo, DWriteFontFeature[][] features,
@@ -57,22 +61,34 @@ namespace MS.Internal.Text.TextInterface {
               TextFormattingMode textFormattingMode, ItemProps itemProps,
               ushort *clusterMap, ushort *textProps, ushort *glyphIndices,
               uint *glyphProps, int *pfCanGlyphAlone,
-              out uint actualGlyphCount);
-    unsafe public extern void GetGlyphsAndTheirPlacements(
+              out uint actualGlyphCount) {
+      actualGlyphCount = 0;
+    }
+
+    unsafe internal void GetGlyphsAndTheirPlacements(
         char *textString, uint textLength, Font font, ushort blankGlyphIndex,
         bool isSideways, bool isRightToLeft, CultureInfo cultureInfo,
         DWriteFontFeature[][] features, uint[] featureRangeLengths,
         double fontEmSize, double scalingFactor, float pixelsPerDip,
         TextFormattingMode textFormattingMode, ItemProps itemProps,
         out ushort[] clusterMap, out ushort[] glyphIndices,
-        out int[] glyphAdvances, out GlyphOffset[] glyphOffsets);
-    unsafe public extern void GetGlyphPlacements(
+        out int[] glyphAdvances, out GlyphOffset[] glyphOffsets) {
+      clusterMap = new ushort[0];
+      glyphIndices = new ushort[0];
+      glyphAdvances = new int[0];
+      glyphOffsets = new GlyphOffset[0];
+    }
+
+    unsafe internal void GetGlyphPlacements(
         char *textString, ushort *clusterMap, ushort *textProps,
         uint textLength, ushort *glyphIndices, uint *glyphProps,
         uint glyphCount, Font font, double fontEmSize, double scalingFactor,
         bool isSideways, bool isRightToLeft, CultureInfo cultureInfo,
         DWriteFontFeature[][] features, uint[] featureRangeLengths,
         TextFormattingMode textFormattingMode, ItemProps itemProps,
-        float pixelsPerDip, int *glyphAdvances, out GlyphOffset[] glyphOffsets);
+        float pixelsPerDip, int *glyphAdvances,
+        out GlyphOffset[] glyphOffsets) {
+      glyphOffsets = new GlyphOffset[0];
+    }
   }
 }

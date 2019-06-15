@@ -8,7 +8,7 @@ namespace MS.Internal.Text.TextInterface {
   /// <summary>
   /// The informational string enumeration identifies a string in a font.
   /// </summary>
-  public enum InformationalStringID {
+  internal enum InformationalStringID {
     /// <summary>
     /// Unspecified name ID.
     /// </summary>

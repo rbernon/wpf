@@ -5,7 +5,7 @@
 using System;
 
 namespace MS.Internal.Text.TextInterface {
-  public enum OpenTypeTableTag {
+  internal enum OpenTypeTableTag {
     CharToIndexMap,     /* 'cmap' */
     ControlValue,       /* 'cvt ' */
     BitmapData,         /* 'EBDT' */

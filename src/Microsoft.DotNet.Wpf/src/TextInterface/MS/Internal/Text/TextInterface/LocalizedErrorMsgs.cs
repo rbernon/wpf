@@ -5,13 +5,13 @@
 using System;
 
 namespace MS.Internal.Text.TextInterface {
-  public class LocalizedErrorMsgs {
-    public static string EnumeratorNotStarted {
+  internal class LocalizedErrorMsgs {
+    internal static string EnumeratorNotStarted {
       get;
       set;
     }
 
-    public static string EnumeratorReachedEnd {
+    internal static string EnumeratorReachedEnd {
       get;
       set;
     }

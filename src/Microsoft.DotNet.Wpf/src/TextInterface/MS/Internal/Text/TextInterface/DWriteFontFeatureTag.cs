@@ -6,7 +6,7 @@ namespace MS.Internal.Text.TextInterface {
   /// <summary>
   /// Typographic feature of text supplied by the font.
   /// </summary>
-  public enum DWriteFontFeatureTag {
+  internal enum DWriteFontFeatureTag {
     AlternativeFractions = 0x63726661,          // 'afrc'
     PetiteCapitalsFromCapitals = 0x63703263,    // 'c2pc'
     SmallCapitalsFromCapitals = 0x63733263,     // 'c2sc'

@@ -17,11 +17,11 @@ namespace MS.Internal.Text.TextInterface {
   /// degradations.
   ///
   /// </summary>
-  public class FontMetrics {
+  internal class FontMetrics {
 #if USE_CAIRO
     private Cairo.FontExtents cairo;
 
-    public FontMetrics(Cairo.FontExtents c) { cairo = c; }
+    internal FontMetrics(Cairo.FontExtents c) { cairo = c; }
 
     /// <summary>
     /// The number of font design units per em unit.
@@ -33,14 +33,14 @@ namespace MS.Internal.Text.TextInterface {
     /// em square is also commonly used to compute the paragraph identation
     /// value.
     /// </summary>
-    public ushort DesignUnitsPerEm { get; }
+    internal ushort DesignUnitsPerEm { get; }
 
     /// <summary>
     /// Ascent value of the font face in font design units.
     /// Ascent is the distance from the top of font character alignment box to
     /// English baseline.
     /// </summary>
-    public ushort Ascent {
+    internal ushort Ascent {
       get { return Convert.ToUInt16(cairo.Ascent); }
     }
 
@@ -49,7 +49,7 @@ namespace MS.Internal.Text.TextInterface {
     /// Descent is the distance from the bottom of font character alignment box
     /// to English baseline.
     /// </summary>
-    public ushort Descent {
+    internal ushort Descent {
       get { return Convert.ToUInt16(cairo.Descent); }
     }
 
@@ -61,7 +61,7 @@ namespace MS.Internal.Text.TextInterface {
     /// positive or zero but can be negative, in which case the recommended line
     /// spacing is less than the height of the character alignment box.
     /// </summary>
-    public short LineGap { get; }
+    internal short LineGap { get; }
 
     /// <summary>
     /// Cap height value of the font face in font design units.
@@ -69,14 +69,14 @@ namespace MS.Internal.Text.TextInterface {
     /// English capital. Capital "H" is often used as a reference character for
     /// the purpose of calculating the cap height value.
     /// </summary>
-    public ushort CapHeight { get; }
+    internal ushort CapHeight { get; }
 
     /// <summary>
     /// x-height value of the font face in font design units.
     /// x-height is the distance from English baseline to the top of lowercase
     /// letter "x", or a similar lowercase character.
     /// </summary>
-    public ushort XHeight { get; }
+    internal ushort XHeight { get; }
 
     /// <summary>
     /// The underline position value of the font face in font design units.
@@ -84,13 +84,13 @@ namespace MS.Internal.Text.TextInterface {
     /// baseline. The value is usually made negative in order to place the
     /// underline below the baseline.
     /// </summary>
-    public short UnderlinePosition { get; }
+    internal short UnderlinePosition { get; }
 
     /// <summary>
     /// The suggested underline thickness value of the font face in font design
     /// units.
     /// </summary>
-    public ushort UnderlineThickness { get; }
+    internal ushort UnderlineThickness { get; }
 
     /// <summary>
     /// The strikethrough position value of the font face in font design units.
@@ -104,31 +104,31 @@ namespace MS.Internal.Text.TextInterface {
     /// The suggested strikethrough thickness value of the font face in font
     /// design units.
     /// </summary>
-    public ushort StrikethroughThickness { get; }
+    internal ushort StrikethroughThickness { get; }
 #else
-    public ushort DesignUnitsPerEm { get; }
-    public ushort Ascent { get; }
-    public ushort Descent { get; }
-    public short LineGap { get; }
-    public ushort CapHeight { get; }
-    public ushort XHeight { get; }
-    public short UnderlinePosition { get; }
-    public ushort UnderlineThickness { get; }
-    public short StrikethroughPosition { get; }
-    public ushort StrikethroughThickness { get; }
+    internal ushort DesignUnitsPerEm { get; }
+    internal ushort Ascent { get; }
+    internal ushort Descent { get; }
+    internal short LineGap { get; }
+    internal ushort CapHeight { get; }
+    internal ushort XHeight { get; }
+    internal short UnderlinePosition { get; }
+    internal ushort UnderlineThickness { get; }
+    internal short StrikethroughPosition { get; }
+    internal ushort StrikethroughThickness { get; }
 #endif
 
     /// <summary>
     /// The baseline of the font face.
     /// </summary>
-    public double Baseline {
+    internal double Baseline {
       get { return (double)(Ascent + LineGap * 0.5) / DesignUnitsPerEm; }
     }
 
     /// <summary>
     /// The linespacing of the font face.
     /// </summary>
-    public double LineSpacing {
+    internal double LineSpacing {
       get { return (double)(Ascent + Descent + LineGap) / DesignUnitsPerEm; }
     }
   }

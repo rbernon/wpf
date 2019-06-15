@@ -5,5 +5,5 @@
 using System.Collections.Generic;
 
 namespace MS.Internal.Text.TextInterface {
-  public interface IFontSourceCollection : IEnumerable<IFontSource> {}
+  internal interface IFontSourceCollection : IEnumerable<IFontSource> {}
 }

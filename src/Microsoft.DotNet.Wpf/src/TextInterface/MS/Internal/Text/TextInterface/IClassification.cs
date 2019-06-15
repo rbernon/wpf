@@ -5,5 +5,5 @@
 using System;
 
 namespace MS.Internal.Text.TextInterface {
-  public interface IClassification {}
+  internal interface IClassification {}
 }

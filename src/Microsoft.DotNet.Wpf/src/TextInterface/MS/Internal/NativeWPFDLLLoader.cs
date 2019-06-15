@@ -6,5 +6,7 @@ using System;
 using System.Windows.Media;
 
 namespace MS.Internal {
-  public class NativeWPFDLLLoader { public extern static void LoadDwrite(); }
+  internal class NativeWPFDLLLoader {
+    internal static void LoadDwrite() {}
+  }
 }

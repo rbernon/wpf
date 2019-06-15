@@ -5,12 +5,12 @@
 using System;
 
 namespace MS.Internal {
-  public class Span {
-    public Span(Object element, int length) {
+  internal class Span {
+    internal Span(Object element, int length) {
       this.element = element;
       this.length = length;
     }
-    public Object element;
-    public int length;
+    internal Object element;
+    internal int length;
   }
 }

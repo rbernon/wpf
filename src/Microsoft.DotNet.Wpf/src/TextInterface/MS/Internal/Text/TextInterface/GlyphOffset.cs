@@ -5,8 +5,8 @@
 using System;
 
 namespace MS.Internal.Text.TextInterface {
-  public struct GlyphOffset {
-    public int du;
-    public int dv;
+  internal struct GlyphOffset {
+    internal int du;
+    internal int dv;
   }
 }

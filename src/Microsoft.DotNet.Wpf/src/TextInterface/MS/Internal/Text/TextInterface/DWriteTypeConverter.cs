@@ -6,7 +6,9 @@ using System;
 using System.Windows.Media;
 
 namespace MS.Internal.Text.TextInterface {
-  public class DWriteTypeConverter {
-    extern public static ushort Convert(TextFormattingMode measuringMode);
+  internal class DWriteTypeConverter {
+    internal static ushort Convert(TextFormattingMode measuringMode) {
+      return 0;
+    }
   }
 }
