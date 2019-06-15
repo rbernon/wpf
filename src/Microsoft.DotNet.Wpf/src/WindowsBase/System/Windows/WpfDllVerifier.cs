@@ -43,7 +43,7 @@ namespace System.Windows
             ExternDll.PresentationFramework,
             ExternDll.WindowsBase,
             ExternDll.WpfGfx,
-            ExternDll.PresentationNativeDll
+            // ExternDll.PresentationNativeDll
         };
 
         /// <summary>
@@ -118,11 +118,11 @@ namespace System.Windows
                 // Any matched DLL should come from the same location as the calling assembly.  For verification, we assume
                 // the calling assembly has been loaded from the correct path.  If we're loading from a NuGet package, just 
                 // ensure all binaries are loading from the same package.
-                if (dllLocation != s_AssemblyLoadPath
-                    && (string.IsNullOrEmpty(s_PackageRootPath) || s_PackageRootPath != GetPackageRootFromPath(dllLocation)))
-                {
-                    consistencyErrors.Add(new Tuple<string, string>(dllName, dllLocation));
-                }
+                // if (dllLocation != s_AssemblyLoadPath
+                //     && (string.IsNullOrEmpty(s_PackageRootPath) || s_PackageRootPath != GetPackageRootFromPath(dllLocation)))
+                // {
+                //     consistencyErrors.Add(new Tuple<string, string>(dllName, dllLocation));
+                // }
 
                 s_CoreDllNames.Remove(dllName);
                 dllsToCheck.Remove(dllName);
